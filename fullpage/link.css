@@ -1,0 +1,41 @@
+#dowebok{
+     background-color: powderblue;
+
+ }
+.slide img{
+    height: 50%;
+    width:100%;
+}
+.conBZ{
+    position:fixed;
+    bottom:20%;
+    text-align: center;
+    margin:0 auto;
+    width: 100%;
+    color:orangered;
+    font-size: 30px;
+}
+#tip{
+    position:fixed;
+    bottom:10%;
+    color:white;
+    display:block;
+    font-size: 40px;
+    margin-left:60%;
+    -webkit-animation: swing 1s;
+    -webkit-animation-iteration-count: infinite;
+}
+.landscape .conBZ{
+    display:none;
+
+}
+
+.landscape #tip{
+    display:none;
+
+}
+
+.landscape .slide img{
+    height:100%;
+    width:100%;
+}

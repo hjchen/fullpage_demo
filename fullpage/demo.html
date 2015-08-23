@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="css/jquery.fullPage.css">
+<script src="js/jquery-1.8.2.min.js"></script>
+<!-- <script type="text/javascript" src="js/jquery.parallax.min.js"></script> -->
+
+<script src="js/jquery.fullPage.min.js"></script>
+<meta charset="utf-8">
+<style type="text/css">
+    body{
+        background-color: #19B1D1;
+    }
+    #section1{
+        text-align: center;
+        font-size: 150px;
+    }
+    #section1 h1{
+        color: white;
+        text-align: center;
+    }
+    #section2{
+        text-align: center;
+        color:white;
+    }
+    #section2 h1{
+        font-size:100px;
+    }
+    #section2 section{
+        font-size: 50px;
+        border:3px solid white;
+        padding-top:50px;
+        padding-bottom: 50px;
+        padding-left:-10px;
+        padding-right: -10px;
+    }
+    #section3{
+        text-align: center;
+        color:white;
+    }
+    #section3 h1{
+        text-align: center;
+        color: white;
+        font-size: 100px;
+    }
+    #section3 section{
+        font-size: 50px;
+        border:3px solid white;
+        padding-top:50px;
+        padding-bottom: 50px;
+        text-align: center;
+        
+    }
+    #touch{
+        
+        text-align: center;
+        position: relative;
+        font-size: 70px;
+        margin-top: 600px;
+        
+    }
+    #touch a{
+        text-decoration: none;
+        background-color: #F9CE17;
+        padding: 10px;
+    }
+</style>
+</head>
+<body>
+<div id="dowebok">
+    <div class="section" id="section1">
+        <h1>Hi</h1>
+        <h1>文东</h1>
+    </div>
+    <div class="section" id="section2">
+        <h1>省广诺时</h1>
+        <section>
+            人生有很多美好，最好的不止一面。<br/>
+            新一年，<br/>
+            你心中最好的自己是什么样？<br/>
+            你想通过哪些新年计划来实现“最好自
+        </section>
+        <div id="touch">
+            <a href="#">戳一戳</a>
+        </div>
+        
+    </div>
+    <div class="section" id="section3">
+        <h1>省广诺时</h1>
+        <section>
+            你心中2016最特别的渴望是什么？<br/>
+            将它作为2016定制台历的封面吧。<br/>
+            
+        </section>
+    </div>
+    <div class="section">
+        <h3>第四屏</h3>
+    </div>
+</div>
+<script type="text/javascript">
+	$(function(){
+    $('#dowebok').fullpage();
+    /*$('#parallax').parallax();*/
+});
+</script>
+</body>
+</html>

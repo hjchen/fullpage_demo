@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+ <meta charset="utf-8">
+<title>fullPage.js演示-slide自动滚动</title>
+    <link rel="stylesheet" href="action.css">
+<link rel="stylesheet" href="link.css" media="only screen and (max-width:1000px)">
+ <link rel="stylesheet" href="http://cdn.dowebok.com/77/css/jquery.fullPage.css">
+<style type="text/css">
+    @media screen and (min-width: 1000px){
+        #dowebok{
+            background-color: powderblue;
+
+        }
+        .slide img{
+            margin-left:20%;
+            margin-right:20%;
+
+        }
+        .conBZ{
+            position: fixed;
+            bottom:0;
+            text-align: center;
+            margin:0 auto;
+            width: 100%;
+            color:orangered;
+
+        }
+        #tip{
+            display:none;
+        }
+
+    }
+
+
+</style>
+</head>
+
+<body>
+<div id="dowebok">
+
+    <div class="section">
+        <div class="slide"><img src="img/1.jpg"> </div>
+        <div class="slide"><img src="img/2.jpg"></div>
+        <div class="slide"><img src="img/3.jpg"></div>
+    </div>
+
+</div>
+<div class="conBZ">
+    <h3>2016除了美好，还有小诺送来的贴心保障。</h3>
+
+</div>
+<div id="tip">横屏可以看大图哦！</div>
+<script src="http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://cdn.dowebok.com/77/js/jquery.fullPage.min.js"></script>
+<script>
+$(function(){
+    $('#dowebok').fullpage({
+
+        loopBottom: true
+    });
+
+    setInterval(function(){
+        $.fn.fullpage.moveSlideRight();
+    }, 3000);
+    //横屏兼容性检测
+    //var meta = document.getElementsByTagName('meta');
+    var supportOrientation = (typeof window.orientation == "number" && typeof window.onorientationchange == "object");
+
+    var updateOrientation = function() {
+        if (supportOrientation) {
+            updateOrientation = function () {
+
+                var orientation = window.orientation;
+                switch (orientation) {
+                    case 90:
+                    case -90:
+                        orientation = "landscape";
+
+                        break;
+                    default:
+                        orientation = "portrait";
+                }
+                document.body.parentNode.setAttribute("class", orientation);
+                /*if (orientation == "landscape") {
+                    sharewidth = "800";
+
+                } else {
+                    var cheaker = navigator.userAgent.toLowerCase();
+                    sharewidth = "640";
+                    if (cheaker.indexOf("safari")>=0) {
+                        sharewidth = "800";
+
+                    }
+
+
+                }
+                meta[7].setAttribute('content', "<meta content='" + ins + ", target-densitydpi=device-dpi, width=" + sharewidth + "px,user-scalable=" + userScalable + "' name='viewport'>");*/
+            };
+        } else {
+
+            var orientation = (window.innerWidth > window.innerHeight) ? "landscape" : "portrait";
+            document.body.parentNode.setAttribute("class", orientation);
+            /*if (orientation == "landscape") {
+                sharewidth = "800";
+
+            } else {
+                sharewidth = "640";
+
+
+            }
+            meta[7].setAttribute('content', "<meta content='" + ins + ", target-densitydpi=device-dpi, width=" + sharewidth + "px,user-scalable=" + userScalable + "' name='viewport'>");*/
+        };
+
+    };
+
+    var init = function() {
+        updateOrientation();
+        var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+        window.addEventListener(evt, function() {
+            updateOrientation();
+        }, false);
+    };
+    init();
+});
+</script>
+</body>
+</html>
